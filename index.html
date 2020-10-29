@@ -3,6 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0. minimum-scale = 1.0">
+     <script>
+      var metaTag=document.createElement('meta');
+      metaTag.name = "viewport";
+      if (screen.width <= 479) {
+          metaTag.content = "width=480, user-scalable=false"
+          window.addEventListener("orientationchange", function() {
+              viewport = document.querySelector("meta[name=viewport]");
+              if(window.orientation === 90 || window.orientation === -90){
+                  viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=false');
+              } else{
+                  viewport.setAttribute('content', 'width=480, user-scalable=false');
+              };
+          }, false);
+      } else{
+          metaTag.content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=false"
+      };
+      document.getElementsByTagName('head')[0].appendChild(metaTag);
+  </script>
     <title>DREAMSHARE</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/main.css">
