@@ -1,0 +1,344 @@
+//Import css
+@import "./base/reset";
+@import "./base/variables";
+@import "./base/_mixins";
+
+//Specification
+body {
+  font-family: $fontFamilyPrioritetText;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 26px;
+  color: $nameSectionColor;
+  text-align: center;
+  width: 100%;
+}
+
+//Header
+
+header {
+  @include size(1440px, 700px);
+  background: black url(../img/headerImg.png) center no-repeat;
+  margin: 0 auto;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: $colorHeaderText;
+
+  h1 {
+    margin-top: 147px;
+    line-height: 63px;
+    width: 476px;
+    text-align: center;
+    font-size: 52px;
+  }
+
+  p {
+    margin-top: 29px;
+    width: 396px;
+    font-weight: 300;
+    font-size: 24px;
+    font-family: $fontFamilySmallText;
+  }
+
+  button {
+    @include size(225px, 40px);
+    margin-top: 34px;
+    background: $buttonColor;
+    color: $colorHeaderText;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+  }
+}
+
+.header {
+  @include size(943px, 40px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 37px;
+
+  .logo {
+    &__item {
+      font-size: 20px;
+      color: $colorHeaderText;
+      text-decoration: none;
+    }
+  }
+
+  .menu {
+    @include size(221px, 100%);
+    ul {
+      display: flex;
+      font-size: 14px;
+      font-weight: 400;
+    }
+    &__item {
+      @include size(90px, 36px);
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 4px;
+      transition: 0.3s border;
+      a {
+        color: $colorHeaderText;
+        text-decoration: none;
+      }
+    }
+    &__item:hover {
+      border: 2px solid $colorHeaderText;
+      border-radius: 40px;
+    }
+  }
+}
+
+// Main
+
+main {
+  width: 940px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin: 0 auto;
+  //section 1
+  .howItWork {
+    @include size(100%, 461px);
+    margin-top: 92px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &__step {
+      @include size(300px, 400px);
+      margin-top: 37px;
+      padding-top: 220px;
+      padding-left: 25px;
+      &:nth-child(2) {
+        background: url(../img/Step1image.png) no-repeat;
+      }
+      &:nth-child(3) {
+        background: url(../img/Step2image.png) no-repeat;
+        padding-top: 250px;
+      }
+      &:nth-child(4) {
+        background: url(../img/Step3image.png) no-repeat;
+      }
+      .step {
+        @include size(70px, 20px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 10px;
+        letter-spacing: 2px;
+        background: $buttonColor;
+        color: $colorHeaderText;
+        border-radius: 40px;
+        font-family: $fontFamilyPrioritetText;
+        font-weight: 400;
+      }
+
+      h3 {
+        color: $colorHeaderText;
+        font-size: 24px;
+        line-height: 26px;
+        margin-top: 24px;
+      }
+      p {
+        font-family: $fontFamilySmallText;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 14px;
+        color: $colorHeaderText;
+        margin-top: 24px;
+        width: 90%;
+      }
+    }
+  }
+  //section 2
+
+  .meetPartner {
+    margin-top: 95px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &__card {
+      @include size(221px, 205px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 38px;
+      h4 {
+        font-size: 14px;
+        color: $nameSectionColor;
+        margin-top: 20px;
+      }
+      p {
+        margin-top: 25px;
+        font-weight: 300;
+        font-size: 14px;
+        font-family: $fontFamilySmallText;
+        color: $nameSectionColor;
+        text-align: center;
+      }
+    }
+
+    &__buttonWraper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      button {
+        @include size(180px, 40px);
+        margin-top: 55px;
+        border-radius: 40px;
+        color: $buttonColor;
+        border: 2px solid $buttonColor;
+        font-size: 14px;
+        text-align: center;
+        font-weight: 700;
+        background-color: white;
+        font-family: $fontFamilyPrioritetText;
+      }
+    }
+  }
+  //Section 3
+  .ideas {
+    @extend .meetPartner;
+
+    h2 {
+      margin-bottom: 16px;
+    }
+    &__img {
+      @include size(300px, 310px);
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 22px;
+      color: $colorHeaderText;
+      text-align: center;
+
+      &:nth-child(2) {
+        background: url(../img/Sport.png) top no-repeat;
+      }
+      &:nth-child(3) {
+        background: url(../img/Healath.png) center no-repeat;
+      }
+      &:nth-child(4) {
+        background: url(../img/Extreme.png) top no-repeat;
+      }
+      &:nth-child(5) {
+        background: url(../img/Games.png) center no-repeat;
+      }
+      &:nth-child(6) {
+        background: url(../img/Culture.png) center no-repeat;
+        @include size(620px, 310px);
+      }
+      &:nth-child(7) {
+        background: url(../img/CultureCopy.png) top no-repeat;
+        @include size(620px, 310px);
+      }
+      &:nth-child(8) {
+        background: url(../img/GamesCopy.png) top no-repeat;
+      }
+    }
+  }
+
+  //Section 4
+
+  .interests {
+    display: flex;
+    flex-direction: column;
+    margin-top: 92px;
+
+    p {
+      font-size: 18px;
+      font-family: $fontFamilySmallText;
+      color: $smallTextColor;
+      font-weight: 300;
+      margin-top: 53px;
+      text-align: center;
+    }
+
+    form {
+      margin: 25px auto;
+    }
+
+    input[type="text"] {
+      @include size(299px, 40px);
+      background: $colorHeaderText;
+      border: 1px solid #d4d4d4;
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.073313);
+      border-radius: 3px;
+      padding-left: 15px;
+      font-size: 14px;
+      font-family: $fontFamilySmallText;
+    }
+    input[type="button"] {
+      @include size(172.12px, 40px);
+      background: $buttonColor;
+      color: $colorHeaderText;
+      border-radius: 40px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.7px;
+    }
+  }
+}
+
+footer {
+  width: 1440px;
+  border-top: 2px solid $buttonColor;
+  margin: 72px auto;
+  font-size: 14px;
+
+  .footerSection {
+    width: 940px;
+    display: flex;
+    margin: 38px auto;
+
+    span {
+      width: 241px;
+      font-weight: 400;
+      font-size: 16px;
+      color: $buttonColor;
+    }
+    nav {
+      width: 239px;
+      font-size: 14px;
+
+      ul {
+        margin-top: 11px;
+        font-size: 14px;
+        font-family: $fontFamilySmallText;
+        font-weight: 300;
+        line-height: 26px;
+        a {
+          text-decoration: none;
+          color: #999999;
+        }
+      }
+    }
+    .designedBy {
+      width: 397px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      p {
+        font-size: 10px;
+        letter-spacing: 1px;
+        color: #cccccc;
+        margin-bottom: 7px;
+      }
+    }
+  }
+}
+
+@import "./base/_media";
